@@ -1,0 +1,14 @@
+# CMake
+/build
+/build-*
+
+# VS Code
+/.vscode
+*.code-workspace
+
+# MS Office
+~*
+
+# Mac
+.DS_Store
+
