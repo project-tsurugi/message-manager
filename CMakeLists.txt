@@ -12,6 +12,69 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+cmake_minimum_required(VERSION 3.10)
+
+project(message-manager
+        VERSION 0.0.1
+        LANGUAGES CXX
+)
+
+# option modules by Nautilus.
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
+
+option(BUILD_TESTS "Build test programs" ON)
+option(FORCE_INSTALL_RPATH "force add lib dir of custom prefixes to INSTALL_RPATH" OFF)
+option(BUILD_DOCUMENTS "Build documents" OFF)
+
+option(ENABLE_SANITIZER "enable sanitizer on debug build" ON)
+option(ENABLE_UB_SANITIZER "enable undefined behavior sanitizer on debug build" OFF)
+option(ENABLE_COVERAGE "enable coverage on debug build" OFF)
+
+find_package(Boost COMPONENTS system filesystem REQUIRED)
+find_package(manager REQUIRED)
+
+include(GNUInstallDirs)
+include(CMakePackageConfigHelpers)
+include(CompileOptions)
+include(InstallOptions)
+include(DatabaseOptions)
+
+set(package_name "message-manager")
+set(export_name "message-manager")
+
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Config.cmake.in
+  ${CMAKE_CURRENT_BINARY_DIR}/${package_name}-config.cmake
+  @ONLY
+)
+
+write_basic_package_version_file(
+  "${CMAKE_CURRENT_BINARY_DIR}/${package_name}-config-version.cmake"
+  COMPATIBILITY SameMajorVersion
+)
+
+
+install(
+  FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/${package_name}-config.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/${package_name}-config-version.cmake
+  DESTINATION
+    ${CMAKE_INSTALL_LIBDIR}/cmake/${package_name}
+)
+
+install(
+  EXPORT ${package_name}
+  NAMESPACE ${package_name}-
+  FILE ${package_name}-targets.cmake
+  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${package_name}
+  EXPORT_LINK_INTERFACE_LIBRARIES
+)
+
+add_custom_target(format
+  COMMAND git ls-files '*.cpp' '*.h' | xargs clang-format -i --style=file -verbose
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
 add_library(message-interface INTERFACE)
 
 target_include_directories(message-interface
@@ -23,4 +86,4 @@ target_include_directories(message-interface
 install_custom(message-interface ${export_name})
 
 add_subdirectory(src)
-add_subdirectory(example)
+#add_subdirectory(example)

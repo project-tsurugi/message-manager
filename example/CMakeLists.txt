@@ -22,7 +22,7 @@ target_link_libraries(manager_example
 target_include_directories(manager_example
     PRIVATE 
         ${CMAKE_CURRENT_SOURCE_DIR}/../include
-        ${CMAKE_CURRENT_SOURCE_DIR}/../../metadata-manager/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/third_party/metadata-manager/include
 )
 
 set_target_properties(manager_example

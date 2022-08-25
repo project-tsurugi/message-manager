@@ -19,7 +19,7 @@
 
 #include <iostream>
 #include "manager/message/ddl_message.h"
-#include "manager/message/message_broker.h"
+#include "manager/message/broker.h"
 #include "oltp_receiver.h"
 
 using namespace manager;
