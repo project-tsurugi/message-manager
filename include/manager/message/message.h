@@ -27,8 +27,6 @@
 #include "manager/message/receiver.h"
 #include "manager/message/status.h"
 
-using namespace manager;
-
 namespace manager::message {
 class Message {
  public:

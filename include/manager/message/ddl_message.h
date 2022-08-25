@@ -23,8 +23,6 @@
 #include "manager/message/status.h"
 #include "manager/metadata/metadata.h"
 
-using namespace manager;
-
 namespace manager::message {
 /**
  * @brief BEGIN DDL message.
