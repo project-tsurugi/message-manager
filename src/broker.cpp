@@ -19,7 +19,7 @@
  */
 
 #include "manager/message/message.h"
-#include "manager/message/message_broker.h"
+#include "manager/message/broker.h"
 
 namespace manager::message {
   /**

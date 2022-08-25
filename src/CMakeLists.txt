@@ -12,11 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include_directories(${PROJECT_SOURCE_DIR}/metadata-manager/include)
-
 add_library(message
     SHARED
-        message_broker.cpp
+        broker.cpp
 )
 
 set_target_properties(message
@@ -25,7 +23,8 @@ set_target_properties(message
 )
 
 target_include_directories(message
-    PRIVATE ${PROJECT_SOURCE_DIR}/include/manager/message
+    PRIVATE ${PROJECT_SOURCE_DIR}/include/manager/message/
+    PRIVATE ${PROJECT_SOURCE_DIR}/third_party/metadata-manager/include/
 )
 
 target_link_libraries(message
