@@ -1,4 +1,4 @@
-# Copyright 2019-2020 tsurugi project.
+# Copyright 2018-2019 tsurugi project.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,20 +12,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-add_executable(manager_example main.cpp oltp_receiver.cpp worker.cpp)
-
-target_link_libraries(manager_example
-    metadata
-    message
-)
-
-target_include_directories(manager_example
-    PRIVATE 
-        ${CMAKE_CURRENT_SOURCE_DIR}/../include
-        ${CMAKE_CURRENT_SOURCE_DIR}/third_party/metadata-manager/include
-)
-
-set_target_properties(manager_example
-    PROPERTIES
-        RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/output"
-)
+include("${CMAKE_CURRENT_LIST_DIR}/@package_name@-targets.cmake")
