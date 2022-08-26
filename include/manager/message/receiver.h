@@ -34,38 +34,38 @@ class Receiver {
   virtual Status receive_end_ddl() const = 0;
 
   // Table object DDL
-  virtual Status receive_create_table(const metadata::ObjectIdType object_id) const { 
+  virtual Status receive_create_table(const manager::metadata::ObjectIdType object_id) const { 
     return Status(ErrorCode::SUCCESS, 0); 
   }
-  virtual Status receive_alter_table(const metadata::ObjectIdType object_id) const { 
+  virtual Status receive_alter_table(const manager::metadata::ObjectIdType object_id) const { 
     return Status(ErrorCode::SUCCESS, 0); 
   }
-  virtual Status receive_drop_table(const metadata::ObjectIdType object_id) const { 
+  virtual Status receive_drop_table(const manager::metadata::ObjectIdType object_id) const { 
     return Status(ErrorCode::SUCCESS, 0); 
   }
 
   // Role object DDL
-  virtual Status receive_create_role(const metadata::ObjectIdType object_id) const { 
+  virtual Status receive_create_role(const manager::metadata::ObjectIdType object_id) const { 
     return Status(ErrorCode::SUCCESS, 0); 
   }
-  virtual Status receive_alter_role(const metadata::ObjectIdType object_id) const { 
+  virtual Status receive_alter_role(const manager::metadata::ObjectIdType object_id) const { 
     return Status(ErrorCode::SUCCESS, 0); 
   }
-  virtual Status receive_drop_role(const metadata::ObjectIdType object_id) const { 
+  virtual Status receive_drop_role(const manager::metadata::ObjectIdType object_id) const { 
     return Status(ErrorCode::SUCCESS, 0); 
   }
 
   // Grant/Revoke
-  virtual Status receive_grant_role(const metadata::ObjectIdType object_id) const { 
+  virtual Status receive_grant_role(const manager::metadata::ObjectIdType object_id) const { 
     return Status(ErrorCode::SUCCESS, 0); 
   }
-  virtual Status receive_revoke_role(const metadata::ObjectIdType object_id) const { 
+  virtual Status receive_revoke_role(const manager::metadata::ObjectIdType object_id) const { 
     return Status(ErrorCode::SUCCESS, 0); 
   }
-  virtual Status receive_grant_table(const metadata::ObjectIdType object_id) const { 
+  virtual Status receive_grant_table(const manager::metadata::ObjectIdType object_id) const { 
     return Status(ErrorCode::SUCCESS, 0); 
   }
-  virtual Status receive_revoke_table(const metadata::ObjectIdType object_id) const { 
+  virtual Status receive_revoke_table(const manager::metadata::ObjectIdType object_id) const { 
     return Status(ErrorCode::SUCCESS, 0); 
   }
 };
