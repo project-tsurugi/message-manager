@@ -26,7 +26,7 @@
 
 namespace manager::message {
 
-class MessageBroker {
+class Broker {
  public:
   /**
    * @brief MessageBroker sends a message to all receivers.
