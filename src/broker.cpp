@@ -31,7 +31,7 @@ namespace manager::message {
    * @return an instance of Status class otherwize.
    * A primary error code and a secondary error code must be set.
    */
-  Status MessageBroker::send_message(Message* msg) {
+  Status Broker::send_message(Message* msg) {
     Status status{ErrorCode::SUCCESS, (int) ErrorCode::SUCCESS};
     status = msg->send_to_receivers();
     return status;
