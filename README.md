@@ -32,8 +32,8 @@ RUN apt update -y && apt install -y git build-essential cmake ninja-build
    ```
 
    available options:
-     - `DCMAKE_INSTALL_PREFIX=<installation directory>` - change install location
-     - `DCMAKE_PREFIX_PATH=<installation directory>` - indicate prerequisite installation directory
+     - `-DCMAKE_INSTALL_PREFIX=<installation directory>` - change install location
+     - `-DCMAKE_PREFIX_PATH=<installation directory>` - indicate prerequisite installation directory
      - for debugging only
        - `-DENABLE_SANITIZER=OFF` - disable sanitizers (requires `-DCMAKE_BUILD_TYPE=Debug`)
        - `-DENABLE_UB_SANITIZER=ON` - enable undefined behavior sanitizer (requires `-DENABLE_SANITIZER=ON`)
