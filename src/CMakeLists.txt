@@ -12,23 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-add_library(message
+add_library(api
     SHARED
         broker.cpp
 )
 
-set_target_properties(message
+set_target_properties(api
     PROPERTIES
-        LIBRARY_OUTPUT_NAME "manager-message"
+        LIBRARY_OUTPUT_NAME "message-manager"
 )
 
-target_include_directories(message
+target_include_directories(api
     PRIVATE ${PROJECT_SOURCE_DIR}/include/manager/message/
     PRIVATE ${PROJECT_SOURCE_DIR}/third_party/metadata-manager/include/
 )
 
-target_link_libraries(message
-    PUBLIC message-interface
+target_link_libraries(api
+    PUBLIC interface
 )
 
-install_custom(message ${export_name})
+install_custom(api ${export_name})

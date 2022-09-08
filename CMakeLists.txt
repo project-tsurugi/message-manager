@@ -31,7 +31,7 @@ option(ENABLE_UB_SANITIZER "enable undefined behavior sanitizer on debug build" 
 option(ENABLE_COVERAGE "enable coverage on debug build" OFF)
 
 find_package(Boost COMPONENTS system filesystem REQUIRED)
-find_package(manager REQUIRED)
+find_package(metadata-manager REQUIRED)
 
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
@@ -75,15 +75,15 @@ add_custom_target(format
   WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_library(message-interface INTERFACE)
+add_library(interface INTERFACE)
 
-target_include_directories(message-interface
+target_include_directories(interface
     INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}/manager>
 )
 
-install_custom(message-interface ${export_name})
+install_custom(interface ${export_name})
 
 add_subdirectory(src)
 #add_subdirectory(example)
