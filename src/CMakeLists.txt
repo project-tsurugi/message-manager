@@ -23,12 +23,13 @@ set_target_properties(api
 )
 
 target_include_directories(api
-    PRIVATE ${PROJECT_SOURCE_DIR}/include/manager/message/
-    PRIVATE ${PROJECT_SOURCE_DIR}/third_party/metadata-manager/include/
+    PRIVATE ${PROJECT_SOURCE_DIR}/include
 )
 
 target_link_libraries(api
-    PUBLIC interface
+    PUBLIC 
+      interface
+      metadata-manager-interface
 )
 
 install_custom(api ${export_name})
