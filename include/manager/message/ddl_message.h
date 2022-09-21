@@ -135,6 +135,7 @@ class CreateRole : public Message {
  * @brief ALTER ROLE message.
  */
 class AlterRole : public Message {
+ public:
   AlterRole(metadata::ObjectIdType object_id) : Message{object_id} {}
   /**
    * @brief
@@ -150,6 +151,7 @@ class AlterRole : public Message {
  * @brief DROP ROLE message.
  */
 class DropRole : public Message {
+ public:
   DropRole(metadata::ObjectIdType object_id) : Message{object_id} {}
   /**
    * @brief
