@@ -44,6 +44,17 @@ class Receiver {
     return Status(ErrorCode::SUCCESS, 0); 
   }
 
+  // Index object DDL
+  virtual Status receive_create_index(const manager::metadata::ObjectIdType object_id) const { 
+    return Status(ErrorCode::SUCCESS, 0); 
+  }
+  virtual Status receive_alter_index(const manager::metadata::ObjectIdType object_id) const {   // reserved
+    return Status(ErrorCode::SUCCESS, 0); 
+  }
+  virtual Status receive_drop_index(const manager::metadata::ObjectIdType object_id) const { 
+    return Status(ErrorCode::SUCCESS, 0); 
+  }
+
   // Role object DDL
   virtual Status receive_create_role(const manager::metadata::ObjectIdType object_id) const { 
     return Status(ErrorCode::SUCCESS, 0); 
