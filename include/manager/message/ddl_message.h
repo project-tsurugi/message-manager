@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- *	@file	message.h
- *	@brief  the message class for metadata-manager.
+ *	@file	ddl_message.h
+ *	@brief  classes of data defined language for metadata-manager.
  */
 #pragma once
 
