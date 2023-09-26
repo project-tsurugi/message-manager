@@ -112,7 +112,7 @@ class DropTable : public Message {
 };
 
 /**
- * @brief CREATE  message.
+ * @brief CREATE INDEX message.
  */
 class CreateIndex : public Message {
  public:
@@ -140,7 +140,7 @@ class DropIndex : public Message {
    * @brief C'tor. Initialize member variables.
    * @param [in] object_id object ID that will be added, updated, or deleted.
    */
-  DropTable(metadata::ObjectIdType object_id) : Message{object_id} {}
+  DropIndex(metadata::ObjectIdType object_id) : Message{object_id} {}
   /**
    * @brief
    * @param [in] receiver ref of Receiver class.
