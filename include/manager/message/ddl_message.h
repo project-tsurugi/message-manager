@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- *	@file	message.h
- *	@brief  the message class for metadata-manager.
+ *	@file	ddl_message.h
+ *	@brief  classes of data defined language for metadata-manager.
  */
 #pragma once
 
@@ -108,6 +108,46 @@ class DropTable : public Message {
    */
   Status send_message(const Receiver& receiver, const int64_t object_id, const int64_t) const {
     return receiver.receive_drop_table(object_id);
+  }
+};
+
+/**
+ * @brief CREATE INDEX message.
+ */
+class CreateIndex : public Message {
+ public:
+  /**
+   * @brief C'tor. Initialize member variables.
+   * @param [in] object_id object ID that will be added, updated, or deleted.
+   */
+  CreateIndex(metadata::ObjectIdType object_id) : Message{object_id} {}
+  /**
+   * @brief
+   * @param [in] receiver ref of Receiver class.
+   * @return
+   */
+  Status send_message(const Receiver& receiver, const int64_t object_id, const int64_t) const {
+    return receiver.receive_create_index(object_id);
+  }
+};
+
+/**
+ * @brief DROP INDEX message.
+ */
+class DropIndex : public Message {
+ public:
+  /**
+   * @brief C'tor. Initialize member variables.
+   * @param [in] object_id object ID that will be added, updated, or deleted.
+   */
+  DropIndex(metadata::ObjectIdType object_id) : Message{object_id} {}
+  /**
+   * @brief
+   * @param [in] receiver ref of Receiver class.
+   * @return
+   */
+  Status send_message(const Receiver& receiver, const int64_t object_id, const int64_t) const {
+    return receiver.receive_drop_index(object_id);
   }
 };
 
