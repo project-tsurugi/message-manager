@@ -40,32 +40,32 @@ int main()
   ct_msg_2.set_receiver(&oltp_receiver);
   ct_msg_3.set_receiver(&oltp_receiver);
 
-  message::Status status = message::MessageBroker::send_message(&begin_ddl);
+  message::Status status = message::Broker::send_message(&begin_ddl);
   std::cout << "message: " << begin_ddl.string() << ", "
             << "primary error code:" << (int)status.get_error_code()
             << ",secondary error code:" << status.get_sub_error_code() << std::endl << std::endl;
 
-  status = message::MessageBroker::send_message(&ct_msg_0);
+  status = message::Broker::send_message(&ct_msg_0);
   std::cout << "message: " << ct_msg_0.string() << ", "
             << "primary error code:" << (int)status.get_error_code()
             << ",secondary error code:" << status.get_sub_error_code() << std::endl << std::endl;;
 
-  status = message::MessageBroker::send_message(&ct_msg_1);
+  status = message::Broker::send_message(&ct_msg_1);
   std::cout << "message: " << ct_msg_1.string() << ", "
             << "primary error code:" << (int)status.get_error_code()
             << ",secondary error code:" << status.get_sub_error_code() << std::endl << std::endl;;
 
-  status = message::MessageBroker::send_message(&ct_msg_2);
+  status = message::Broker::send_message(&ct_msg_2);
   std::cout << "message: " << ct_msg_2.string() << ", "
             << "primary error code:" << (int)status.get_error_code()
             << ",secondary error code:" << status.get_sub_error_code() << std::endl << std::endl;;
 
-  status = message::MessageBroker::send_message(&ct_msg_3);
+  status = message::Broker::send_message(&ct_msg_3);
   std::cout << "message: " << ct_msg_3.string() << ", "
             << "primary error code:" << (int)status.get_error_code()
             << ",secondary error code:" << status.get_sub_error_code() << std::endl << std::endl;;
   
-  status = message::MessageBroker::send_message(&end_ddl);
+  status = message::Broker::send_message(&end_ddl);
   std::cout << "message: " << end_ddl.string() << ", "
             << "primary error code:" << (int)status.get_error_code()
             << ",secondary error code:" << status.get_sub_error_code() << std::endl << std::endl;;
