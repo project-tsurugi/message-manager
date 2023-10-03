@@ -1,6 +1,5 @@
 # message-broker
 
-
 ## Requirements
 
 - CMake `>= 3.10`
