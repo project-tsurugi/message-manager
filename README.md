@@ -9,7 +9,7 @@
 ### Dockerfile
 
 ```dockerfile
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 RUN apt update -y && apt install -y git build-essential cmake ninja-build 
 ```
@@ -44,10 +44,6 @@ RUN apt update -y && apt install -y git build-essential cmake ninja-build
 ```sh
 ninja install
 ```
-
-### run tests
-
-T.B.D
 
 ## License
 
