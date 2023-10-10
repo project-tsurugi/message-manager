@@ -1,4 +1,4 @@
-# message-broker
+# message-manager
 
 ## Requirements
 
