@@ -19,6 +19,7 @@ add_library(api
 
 set_target_properties(api
     PROPERTIES
+        INSTALL_RPATH "\$ORIGIN/../lib"
         LIBRARY_OUTPUT_NAME "message-manager"
 )
 
